@@ -46,7 +46,11 @@ def categorizar_palavras(frase):
     frase_categorizada = []
     for token, tag in tags:
         categoria = categorias_traduzidas.get(tag, 'Desconhecido')
-        palavra_categorizada = f'{token} ({categoria})'
+        #palavra_categorizada = f'{token} ({categoria})'
+        if categoria=='Desconhecido':
+            palavra_categorizada = f'<span title="{categoria}">{token}<sup><i>?</i></sup></span>'
+        else:
+            palavra_categorizada = f'<span title="{categoria}">{token}</span>'
         frase_categorizada.append(palavra_categorizada)
 
     return ' '.join(frase_categorizada)
