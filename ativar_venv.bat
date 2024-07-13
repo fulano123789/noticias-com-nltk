@@ -2,3 +2,7 @@ venv\Scripts\activate
 
 pip instal -r requirements.txt
 python -m spacy download pt_core_news_sm
+
+
+
+gunicorn --bind 0.0.0.0:8080 app:app
