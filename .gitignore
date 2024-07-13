@@ -106,3 +106,5 @@ dmypy.json
 prompt.gpt
 prompt.leo
 .gitignore
+__pycache__/
+venv/
