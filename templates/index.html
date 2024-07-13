@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Classificação Gramatical com SpaCy</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+
+    <body>
+        <header>
+            <h1>Notícias Classificadas Gramaticalmente</h1>
+        </header>
+        <main>
+            <ul id="frases">
+                {% for frase in frases %}
+                <li>{{ frase|safe }}</li>
+                {% endfor %}
+            </ul>
+        </main>
+    </body>
+
+</html>
