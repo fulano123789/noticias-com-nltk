@@ -9,10 +9,27 @@
     </head>
 
     <body>
+
+
+
+        <nav>
+            <ul>
+                <li><a href="/">🏠</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="/spacy_globo">SPACY (globo)</a></li>
+                <li><a href="/spacy_newsapi">SPACY (newsapi)</a></li>
+                <li><a href="/nltk_globo">NLTK (globo)</a></li>
+                <li><a href="/nltk_newsapi">NLTK (newsapi)</a></li>
+            </ul>
+        </nav>
+
+        <br>
         <header>
             <h1>Notícias Classificadas Gramaticalmente</h1>
         </header>
         <main>
+
             <ul id="frases">
                 {% for frase in frases %}
                 <li>{{ frase|safe }}</li>

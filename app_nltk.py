@@ -1,14 +1,6 @@
-from flask import Flask, render_template
-from dotenv import load_dotenv
-import os
 import nltk
 from nltk.tokenize import word_tokenize
-from scrape import obter_noticias  # Importa a função de scraping
 
-app = Flask(__name__)
-
-# Carregar variáveis do arquivo .env
-load_dotenv()
 
 # Inicializar NLTK para o processamento em português
 nltk.download('punkt')
@@ -59,11 +51,3 @@ def categorizar_palavras(frase):
 
     return ' '.join(frase_categorizada)
 
-@app.route('/')
-def index():
-    noticias = obter_noticias()  # Obtém notícias reais
-    frases_categorizadas = [categorizar_palavras(noticia) for noticia in noticias]
-    return render_template('index.html', frases=frases_categorizadas)
-
-if __name__ == '__main__':
-    app.run(debug=True)

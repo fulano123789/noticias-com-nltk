@@ -54,3 +54,26 @@ span {
 span:hover {
     text-decoration: underline;
 }
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    padding-left: 1rem;
+    font-size: 1.0em;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #8aa6f3
+}

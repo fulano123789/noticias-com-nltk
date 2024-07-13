@@ -1,9 +1,5 @@
-from flask import Flask, render_template
-import requests
 import spacy
-from scrape import obter_noticias  # Importa a função de scraping
 
-app = Flask(__name__)
 
 # Carregar o modelo de SpaCy para português
 nlp = spacy.load("pt_core_news_sm")
@@ -58,11 +54,3 @@ def colorir_palavras(frase):
 
     return ' '.join(frase_colorida)
 
-@app.route('/')
-def index():
-    noticias = obter_noticias()  # Obtém notícias reais
-    frases_coloridas = [colorir_palavras(noticia) for noticia in noticias]
-    return render_template('index.html', frases=frases_coloridas)
-
-if __name__ == '__main__':
-    app.run(debug=True)
