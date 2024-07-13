@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 # Inicializar NLTK para o processamento em português
 nltk.download('punkt')
 nltk.download('floresta')
+nltk.download('averaged_perceptron_tagger')
 
 # Função para categorizar palavras usando NLTK
 def categorizar_palavras(frase):
